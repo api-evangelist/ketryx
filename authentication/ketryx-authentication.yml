@@ -1,0 +1,14 @@
+generated: '2026-07-19'
+method: derived
+source: openapi/ketryx-build-api-openapi.yml
+summary:
+  types:
+  - http
+schemes:
+- name: bearerAuth
+  type: http
+  scheme: bearer
+  description: 'A Ketryx API key passed as an HTTP Bearer token in the Authorization header
+    ("Authorization: Bearer <api-key>"). API keys are issued per project in the Ketryx application.'
+  sources:
+  - openapi/ketryx-build-api-openapi.yml
