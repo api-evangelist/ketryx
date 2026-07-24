@@ -1,0 +1,113 @@
+openapi: 3.1.0
+info:
+  title: Ketryx Build Artifacts Builds API
+  version: v1
+  description: The Ketryx Build API lets CI/CD pipelines report builds, test results, and software bill-of-materials (SBOM) documents to the Ketryx application lifecycle management (ALM) platform for regulated medical-device and life-sciences software. Builds are associated with a Ketryx project and a version (or a commit SHA), and can carry JUnit / Cucumber test results, build artifacts, and CycloneDX / SPDX SBOM files. This specification was derived from Ketryx's own open-source clients (the Ketryx GitHub Action and the build-api-reporter Python utility); it is not the provider's published OpenAPI.
+  x-provenance:
+    generated: '2026-07-19'
+    method: derived
+    source:
+    - https://github.com/Ketryx/ketryx-github-action
+    - https://github.com/Ketryx/build-api-reporter
+    - https://docs.ketryx.com/api/build-api
+  contact:
+    name: Ketryx Support
+    url: https://ketryx.zendesk.com/hc/en-us
+servers:
+- url: https://app.ketryx.com
+  description: Ketryx hosted platform (self-hosted instances use their own URL)
+security:
+- bearerAuth: []
+tags:
+- name: Builds
+  description: Report builds and their status to Ketryx.
+paths:
+  /api/v1/builds:
+    post:
+      tags:
+      - Builds
+      operationId: reportBuild
+      summary: Report a build
+      description: Report a build to Ketryx, associating uploaded artifacts and test results with a project and either an explicit version or a commit SHA. Optional server-side checks can fail the build when dependencies are not controlled, a pull request is not associated with a Ketryx item, or the corresponding version is not released.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BuildRequest'
+      responses:
+        '200':
+          description: Build recorded.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Build'
+        '401':
+          description: Missing or invalid API key.
+        '400':
+          description: Invalid request (missing project, or unresolvable version).
+components:
+  schemas:
+    Build:
+      type: object
+      description: A recorded build.
+      properties:
+        id:
+          type: string
+          description: Ketryx ID of the reported build.
+        buildId:
+          type: string
+          description: Ketryx ID of the reported build.
+        projectId:
+          type: string
+          description: Ketryx project ID the build belongs to.
+        ok:
+          type: boolean
+          description: Whether the build and any included checks succeeded.
+      additionalProperties: true
+    BuildRequest:
+      type: object
+      required:
+      - project
+      properties:
+        project:
+          type: string
+          description: Ketryx project ID.
+        buildName:
+          type: string
+          description: Build name, used to disambiguate parallel builds.
+        version:
+          type: string
+          description: Ketryx version ID. Takes precedence over commitSha when set.
+        commitSha:
+          type: string
+          description: Commit SHA used to resolve the version when no explicit version is provided.
+        artifacts:
+          type: array
+          description: References to previously uploaded artifacts and test results.
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+              type:
+                type: string
+            additionalProperties: true
+        sourceUrl:
+          type: string
+          format: uri
+          description: URL of the CI source server (e.g. the GitHub server URL).
+        repositoryUrls:
+          type: array
+          description: URLs of the source repositories for this build.
+          items:
+            type: string
+            format: uri
+        log:
+          type: string
+          description: Log output to store with the build.
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: 'A Ketryx API key passed as an HTTP Bearer token in the Authorization header ("Authorization: Bearer <api-key>"). API keys are issued per project in the Ketryx application.'

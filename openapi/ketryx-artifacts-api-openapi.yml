@@ -1,0 +1,81 @@
+openapi: 3.1.0
+info:
+  title: Ketryx Build Artifacts API
+  version: v1
+  description: The Ketryx Build API lets CI/CD pipelines report builds, test results, and software bill-of-materials (SBOM) documents to the Ketryx application lifecycle management (ALM) platform for regulated medical-device and life-sciences software. Builds are associated with a Ketryx project and a version (or a commit SHA), and can carry JUnit / Cucumber test results, build artifacts, and CycloneDX / SPDX SBOM files. This specification was derived from Ketryx's own open-source clients (the Ketryx GitHub Action and the build-api-reporter Python utility); it is not the provider's published OpenAPI.
+  x-provenance:
+    generated: '2026-07-19'
+    method: derived
+    source:
+    - https://github.com/Ketryx/ketryx-github-action
+    - https://github.com/Ketryx/build-api-reporter
+    - https://docs.ketryx.com/api/build-api
+  contact:
+    name: Ketryx Support
+    url: https://ketryx.zendesk.com/hc/en-us
+servers:
+- url: https://app.ketryx.com
+  description: Ketryx hosted platform (self-hosted instances use their own URL)
+security:
+- bearerAuth: []
+tags:
+- name: Artifacts
+  description: Upload build artifacts, test results, and SBOM files.
+paths:
+  /api/v1/build-artifacts:
+    post:
+      tags:
+      - Artifacts
+      operationId: uploadBuildArtifact
+      summary: Upload a build artifact
+      description: Upload a single artifact file (a build output, a JUnit XML or Cucumber JSON test report, or a CycloneDX / SPDX SBOM document) to a Ketryx project. Returns the identifier of the stored artifact, which is then referenced when reporting a build.
+      parameters:
+      - name: project
+        in: query
+        required: true
+        description: Ketryx project ID the artifact belongs to.
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required:
+              - file
+              properties:
+                file:
+                  type: string
+                  format: binary
+                  description: The artifact file to upload.
+      responses:
+        '200':
+          description: Artifact stored.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BuildArtifact'
+        '401':
+          description: Missing or invalid API key.
+        '400':
+          description: Invalid request (missing project or file).
+components:
+  schemas:
+    BuildArtifact:
+      type: object
+      description: A stored artifact returned by an upload.
+      required:
+      - id
+      properties:
+        id:
+          type: string
+          description: Identifier of the stored artifact.
+        type:
+          type: string
+          description: Artifact classification (e.g. test result, SBOM, build output).
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: 'A Ketryx API key passed as an HTTP Bearer token in the Authorization header ("Authorization: Bearer <api-key>"). API keys are issued per project in the Ketryx application.'
