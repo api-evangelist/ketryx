@@ -1,0 +1,27 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Ketryx Build API
+  version: 1.0.0
+extends: openapi/ketryx-build-api-openapi.yml
+actions:
+  - target: $.info
+    update:
+      x-apievangelist-enriched: '2026-07-19'
+      x-apievangelist-provenance: derived-from-open-source-clients
+      x-apievangelist-trust-center: https://trust.ketryx.com
+      x-apievangelist-status-page: https://status.ketryx.com
+  - target: $.paths['/api/v1/builds'].post
+    update:
+      x-apievangelist-idempotent: false
+      x-apievangelist-checks:
+        - check-dependencies-status
+        - check-item-association
+        - check-release-status
+  - target: $.paths['/api/v1/build-artifacts'].post
+    update:
+      x-apievangelist-artifact-types:
+        - junit-xml
+        - cucumber-json
+        - cyclonedx-json-sbom
+        - spdx-json-sbom
+        - build-output

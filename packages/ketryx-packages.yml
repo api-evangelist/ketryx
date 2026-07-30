@@ -1,0 +1,27 @@
+generated: '2026-07-19'
+method: searched
+source:
+  - https://github.com/Ketryx/ketryx-github-action
+  - https://github.com/Ketryx/build-api-reporter
+  - https://github.com/marketplace/actions/ketryx
+packages:
+  - language: yaml
+    registry: github-actions
+    name: Ketryx/ketryx-github-action
+    url: https://github.com/Ketryx/ketryx-github-action
+    marketplace: https://github.com/marketplace/actions/ketryx
+    install: "uses: Ketryx/ketryx-github-action"
+    description: >-
+      First-party GitHub Action that reports builds, test results (JUnit /
+      Cucumber), build artifacts, and CycloneDX / SPDX SBOM files to the Ketryx
+      Build API.
+    official: true
+  - language: python
+    registry: github
+    name: build-api-reporter
+    url: https://github.com/Ketryx/build-api-reporter
+    install: "git clone https://github.com/Ketryx/build-api-reporter"
+    description: >-
+      First-party Python utility for uploading test results and SBOM documents
+      to the Ketryx Build API (installed from source; not published to PyPI).
+    official: true

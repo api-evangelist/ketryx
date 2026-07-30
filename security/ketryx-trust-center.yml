@@ -1,0 +1,30 @@
+generated: '2026-07-19'
+method: searched
+source: https://trust.ketryx.com
+url: https://trust.ketryx.com
+certifications:
+  - SOC 2 Type 2
+  - SOC 3
+  - ISO/IEC 27001:2022
+  - ISO 13485:2016
+  - ISO 14971:2019
+  - IEC 62304:2006
+  - HIPAA BAA
+  - FDA 21 CFR Part 11
+documents:
+  - SOC 2 and SOC 3 reports
+  - Validation packages
+  - Penetration testing results
+  - Quality practice assessments
+access_note: >-
+  A mutual non-disclosure agreement must be in place before Ketryx shares
+  sensitive Trust Center materials.
+subprocessors:
+  - Amazon Web Services (AWS)
+  - OpenAI
+  - Anthropic
+  - PostHog
+  - Datadog
+evidence:
+  - source: https://trust.ketryx.com
+    keywords: [soc 2, iso 27001, iso 13485, hipaa, fda part 11, trust center]

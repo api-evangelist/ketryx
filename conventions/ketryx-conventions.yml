@@ -1,0 +1,38 @@
+generated: '2026-07-19'
+method: derived
+source:
+  - openapi/ketryx-build-api-openapi.yml
+  - https://github.com/Ketryx/build-api-reporter
+authentication:
+  style: bearer-token
+  header: Authorization
+  format: "Bearer <api-key>"
+  scope: per-project API key
+  see: authentication/ketryx-authentication.yml
+base_url: https://app.ketryx.com
+self_hosted: true
+self_hosted_note: >-
+  Self-hosted / dedicated Ketryx instances use their own base URL (KETRYX_URL);
+  the path structure (/api/v1/...) is the same.
+content_type:
+  request: application/json (builds) and multipart/form-data (artifact upload)
+  response: application/json
+idempotency:
+  supported: false
+  note: No idempotency-key header or parameter is documented for the Build API.
+pagination:
+  supported: false
+  note: The Build API is a write/report surface; no list endpoints are published.
+versioning:
+  style: uri-path
+  current: v1
+  see: lifecycle/ketryx-lifecycle.yml
+error_envelope:
+  format: plain-text-or-json
+  signal: non-200 HTTP status with an error message body
+  note: >-
+    Open-source clients treat any non-200 response as a failure and surface the
+    response body text; no RFC 9457 problem+json envelope was observed.
+  see: errors/ketryx-problem-types.yml
+rate_limits:
+  documented: false

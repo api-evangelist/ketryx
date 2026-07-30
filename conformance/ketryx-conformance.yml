@@ -1,0 +1,46 @@
+generated: '2026-07-19'
+method: searched
+source: https://trust.ketryx.com
+standards:
+  - id: soc2-type2
+    conforms: true
+    evidence: SOC 2 Type 2 report available via Ketryx Trust Center
+  - id: soc3
+    conforms: true
+    evidence: SOC 3 report available via Ketryx Trust Center
+  - id: iso-27001-2022
+    conforms: true
+    evidence: ISO/IEC 27001:2022 certified (Trust Center)
+  - id: iso-13485-2016
+    conforms: true
+    evidence: ISO 13485:2016 medical device quality management (Trust Center)
+  - id: iso-14971-2019
+    conforms: true
+    evidence: ISO 14971:2019 risk management (Trust Center, product capability)
+  - id: iec-62304-2006
+    conforms: true
+    evidence: IEC 62304:2006 medical device software lifecycle (Trust Center)
+  - id: hipaa
+    conforms: true
+    evidence: HIPAA Business Associate Agreement (BAA) available
+  - id: fda-21-cfr-part-11
+    conforms: true
+    evidence: FDA 21 CFR Part 11 self-assessment provided (Trust Center)
+  - id: cyclonedx
+    conforms: true
+    evidence: Build API ingests CycloneDX JSON SBOM documents
+  - id: spdx
+    conforms: true
+    evidence: Build API ingests SPDX JSON SBOM documents
+  - id: junit
+    conforms: true
+    evidence: Build API ingests JUnit XML test results
+  - id: cucumber
+    conforms: true
+    evidence: Build API ingests Cucumber JSON test results
+  - id: oauth2
+    conforms: false
+    evidence: API uses per-project API keys as HTTP Bearer tokens, not OAuth2
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: no application/problem+json error envelope observed in clients

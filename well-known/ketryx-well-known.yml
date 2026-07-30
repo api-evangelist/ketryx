@@ -1,0 +1,33 @@
+generated: '2026-07-19'
+method: searched
+host: https://www.ketryx.com
+note: >-
+  Probed the standard /.well-known/ discovery surface on the Ketryx website and
+  application hosts. No .well-known documents were served (all 404). A real
+  /llms.txt was found at the site root and is captured in llms/ketryx-llms.txt.
+documents:
+  - path: /.well-known/security.txt
+    host: https://www.ketryx.com
+    status: 404
+  - path: /.well-known/security.txt
+    host: https://ketryx.com
+    status: 404
+  - path: /.well-known/openid-configuration
+    host: https://www.ketryx.com
+    status: 404
+  - path: /.well-known/openid-configuration
+    host: https://app.ketryx.com
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    host: https://app.ketryx.com
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    host: https://www.ketryx.com
+    status: 404
+  - path: /.well-known/api-catalog
+    host: https://www.ketryx.com
+    status: 404
+  - path: /llms.txt
+    host: https://www.ketryx.com
+    status: 200
+    file: ../llms/ketryx-llms.txt

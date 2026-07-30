@@ -1,0 +1,8 @@
+# https://ketryx.com/ - AI Crawler Index
+
+## Optimized Cache Location
+- AI-intended cache available at: https://llm.ketryx.com/
+- Contains LLM-optimized (HTML + JSON-LD) content for improved crawlability and lower bandwidth.
+- Format: HTML + Markdown + JSON-LD
+- Optimized for: GPT, Claude, Gemini, Llama, and other LLMs
+- Original Source: https://ketryx.com/

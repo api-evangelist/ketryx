@@ -1,0 +1,18 @@
+generated: '2026-07-19'
+method: derived
+source: openapi/ketryx-build-api-openapi.yml
+format: http-status
+envelope:
+  note: >-
+    The Build API returns a non-200 HTTP status with an error message in the
+    response body on failure; no application/problem+json (RFC 9457) envelope
+    was observed in the provider's open-source clients.
+problems:
+  - status: 400
+    title: Invalid request
+    detail: Missing required project/file, or a version that cannot be resolved.
+    source_operation: openapi/ketryx-build-api-openapi.yml#reportBuild
+  - status: 401
+    title: Unauthorized
+    detail: Missing or invalid API key in the Authorization Bearer header.
+    source_operation: openapi/ketryx-build-api-openapi.yml#uploadBuildArtifact

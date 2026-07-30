@@ -1,0 +1,35 @@
+generated: '2026-07-19'
+method: derived
+source: openapi/ketryx-build-api-openapi.yml
+entities:
+  - name: Project
+    description: A Ketryx project; every build and artifact belongs to one.
+    id_field: project
+  - name: Version
+    description: A version of a project; a build is associated with a version or a commit SHA.
+    id_field: version
+  - name: Build
+    description: A reported build, carrying artifacts, test results, and metadata.
+    id_field: id
+    fields: [buildName, projectId, version, commitSha, sourceUrl, repositoryUrls, ok, log]
+  - name: BuildArtifact
+    description: An uploaded file (build output, test report, or SBOM) referenced by a build.
+    id_field: id
+    fields: [type]
+relationships:
+  - from: Build
+    to: Project
+    kind: belongs_to
+    via: project
+  - from: Build
+    to: Version
+    kind: belongs_to
+    via: version
+  - from: Build
+    to: BuildArtifact
+    kind: has_many
+    via: artifacts
+  - from: BuildArtifact
+    to: Project
+    kind: belongs_to
+    via: project

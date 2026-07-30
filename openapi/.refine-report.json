@@ -1,0 +1,16 @@
+{
+  "provider": "ketryx",
+  "sources": [
+    "ketryx-artifacts-api-openapi.yml",
+    "ketryx-builds-api-openapi.yml"
+  ],
+  "outputs": [
+    "ketryx-artifacts-api-openapi.yml",
+    "ketryx-builds-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

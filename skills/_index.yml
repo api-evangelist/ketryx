@@ -1,0 +1,7 @@
+generated: '2026-07-19'
+method: generated
+skills:
+  - file: ketryx-report-build.md
+    name: Report a build to Ketryx
+    api: openapi/ketryx-build-api-openapi.yml
+    operations: [uploadBuildArtifact, reportBuild]
