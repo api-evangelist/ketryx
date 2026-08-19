@@ -1,0 +1,39 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Ketryx Build Artifacts Builds API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Builds",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Report a build",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.ketryx.com/api/v1/builds",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Report a build to Ketryx, associating uploaded artifacts and test results with a project and either an explicit version or a commit SHA. Optional server-side checks can fail the build when dependencies are not controlled, a pull request is not associated with a Ketryx item, or the corresponding version is not released."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

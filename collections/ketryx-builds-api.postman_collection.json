@@ -1,0 +1,242 @@
+{
+  "item": [
+    {
+      "id": "3d64f75d-f717-4cf6-834c-ad079c6084b2",
+      "name": "Builds",
+      "description": {
+        "content": "Report builds and their status to Ketryx.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "155d51f2-82cc-40ae-88ae-7bd5db0c78b3",
+          "name": "Report a build",
+          "request": {
+            "name": "Report a build",
+            "description": {
+              "content": "Report a build to Ketryx, associating uploaded artifacts and test results with a project and either an explicit version or a commit SHA. Optional server-side checks can fail the build when dependencies are not controlled, a pull request is not associated with a Ketryx item, or the corresponding version is not released.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "builds"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"project\": \"<string>\",\n  \"buildName\": \"<string>\",\n  \"version\": \"<string>\",\n  \"commitSha\": \"<string>\",\n  \"artifacts\": [\n    {\n      \"id\": \"<string>\",\n      \"type\": \"<string>\",\n      \"key_0\": false,\n      \"key_1\": 4482,\n      \"key_2\": \"string\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"type\": \"<string>\"\n    }\n  ],\n  \"sourceUrl\": \"<uri>\",\n  \"repositoryUrls\": [\n    \"<uri>\",\n    \"<uri>\"\n  ],\n  \"log\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "1d8c6ed3-f2a0-40f0-ac92-c589cf83619c",
+              "name": "Build recorded.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "builds"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"project\": \"<string>\",\n  \"buildName\": \"<string>\",\n  \"version\": \"<string>\",\n  \"commitSha\": \"<string>\",\n  \"artifacts\": [\n    {\n      \"id\": \"<string>\",\n      \"type\": \"<string>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"type\": \"<string>\",\n      \"key_0\": \"string\",\n      \"key_1\": 3479,\n      \"key_2\": 2291\n    }\n  ],\n  \"sourceUrl\": \"<uri>\",\n  \"repositoryUrls\": [\n    \"<uri>\",\n    \"<uri>\"\n  ],\n  \"log\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"buildId\": \"string\",\n  \"projectId\": \"string\",\n  \"ok\": true\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "46da57f4-3a6d-45ff-a5ea-50cf1e5657cb",
+              "name": "Invalid request (missing project, or unresolvable version).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "builds"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"project\": \"<string>\",\n  \"buildName\": \"<string>\",\n  \"version\": \"<string>\",\n  \"commitSha\": \"<string>\",\n  \"artifacts\": [\n    {\n      \"id\": \"<string>\",\n      \"type\": \"<string>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"type\": \"<string>\",\n      \"key_0\": \"string\",\n      \"key_1\": 3479,\n      \"key_2\": 2291\n    }\n  ],\n  \"sourceUrl\": \"<uri>\",\n  \"repositoryUrls\": [\n    \"<uri>\",\n    \"<uri>\"\n  ],\n  \"log\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c76f7b75-6fc0-4e36-b9dd-a4ac062eae38",
+              "name": "Missing or invalid API key.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "builds"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"project\": \"<string>\",\n  \"buildName\": \"<string>\",\n  \"version\": \"<string>\",\n  \"commitSha\": \"<string>\",\n  \"artifacts\": [\n    {\n      \"id\": \"<string>\",\n      \"type\": \"<string>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"type\": \"<string>\",\n      \"key_0\": \"string\",\n      \"key_1\": 3479,\n      \"key_2\": 2291\n    }\n  ],\n  \"sourceUrl\": \"<uri>\",\n  \"repositoryUrls\": [\n    \"<uri>\",\n    \"<uri>\"\n  ],\n  \"log\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://app.ketryx.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "5c37704e-fd82-418e-89f1-056fd63a585a",
+    "name": "Ketryx Build Artifacts Builds API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Ketryx Build API lets CI/CD pipelines report builds, test results, and software bill-of-materials (SBOM) documents to the Ketryx application lifecycle management (ALM) platform for regulated medical-device and life-sciences software. Builds are associated with a Ketryx project and a version (or a commit SHA), and can carry JUnit / Cucumber test results, build artifacts, and CycloneDX / SPDX SBOM files. This specification was derived from Ketryx's own open-source clients (the Ketryx GitHub Action and the build-api-reporter Python utility); it is not the provider's published OpenAPI.\n\nContact Support:\n Name: Ketryx Support",
+      "type": "text/plain"
+    }
+  }
+}

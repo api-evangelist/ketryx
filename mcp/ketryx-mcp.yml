@@ -2,20 +2,23 @@ generated: '2026-07-19'
 method: derived
 status: candidate
 source: openapi/ketryx-build-api-openapi.yml
-note: >-
-  No official hosted/remote Ketryx MCP server was found. This is a candidate
-  tool list derived from the Build API operations; it is not published by Ketryx.
+note: No official hosted/remote Ketryx MCP server was found. This is a candidate tool list derived from
+  the Build API operations; it is not published by Ketryx.
 server:
   name: ketryx
   transport: http
 tools:
-  - name: upload_build_artifact
-    description: >-
-      Upload a build artifact, JUnit/Cucumber test report, or CycloneDX/SPDX
-      SBOM file to a Ketryx project.
-    source_operation: openapi/ketryx-build-api-openapi.yml#uploadBuildArtifact
-  - name: report_build
-    description: >-
-      Report a build to Ketryx, associating uploaded artifacts and test results
-      with a project and a version or commit SHA.
-    source_operation: openapi/ketryx-build-api-openapi.yml#reportBuild
+- name: upload_build_artifact
+  description: Upload a build artifact, JUnit/Cucumber test report, or CycloneDX/SPDX SBOM file to a Ketryx
+    project.
+  source_operation: openapi/ketryx-build-api-openapi.yml#uploadBuildArtifact
+- name: report_build
+  description: Report a build to Ketryx, associating uploaded artifacts and test results with a project
+    and a version or commit SHA.
+  source_operation: openapi/ketryx-build-api-openapi.yml#reportBuild
+deployment:
+  mode: none
+  verified: derived
+  tools: 2
+  checked: '2026-08-12'
+  source: catalog MCP census

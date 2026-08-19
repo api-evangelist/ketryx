@@ -1,0 +1,53 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Ketryx Build Artifacts API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Artifacts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Upload a build artifact",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.ketryx.com/api/v1/build-artifacts",
+            "params": [
+              {
+                "name": "project",
+                "value": "",
+                "type": "query",
+                "description": "Ketryx project ID the artifact belongs to."
+              }
+            ],
+            "body": {
+              "type": "multipart-form",
+              "data": [
+                {
+                  "name": "file",
+                  "type": "text",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Upload a single artifact file (a build output, a JUnit XML or Cucumber JSON test report, or a CycloneDX / SPDX SBOM document) to a Ketryx project. Returns the identifier of the stored artifact, which is then referenced when reporting a build."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
