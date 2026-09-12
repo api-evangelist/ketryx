@@ -107,6 +107,8 @@ apis:
   - type: DataModel
     url: data-model/ketryx-data-model.yml
 common:
+- type: Website
+  url: https://www.ketryx.com/
 - type: Overlay
   url: overlays/ketryx-build-api-overlay.yaml
 - type: AgenticAccess
