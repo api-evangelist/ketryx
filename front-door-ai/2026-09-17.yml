@@ -1,0 +1,36 @@
+# Front Door AI Index — ketryx — 2026-09-17
+# AI vocabulary counted on the provider's root page. Generated; do not edit.
+# `score` is null unless ownership is `own` — see front_door_ai.py.
+front_door_ai:
+  slug: ketryx
+  lexicon_version: '1.0'
+  probed_at: '2026-09-17'
+  host: www.ketryx.com
+  final_host: www.ketryx.com
+  ownership: own
+  owner: ketryx
+  shares_host_with: null
+  inherited_from: null
+  verdict: scored
+  score: 101
+  host_score: 101
+  density: 33.36
+  words: 3028
+  tiers:
+    agentic: 16
+    core: 83
+    model: 2
+  ambiguous: 8
+  top_terms:
+    AI: 68
+    ML: 9
+    AI agent: 8
+    agent: 8
+    agentic: 3
+    machine learning: 3
+    AI assistant: 2
+    LLMs: 2
+    MCP: 2
+    ChatGPT: 1
+    Gemini: 1
+    embedding: 1

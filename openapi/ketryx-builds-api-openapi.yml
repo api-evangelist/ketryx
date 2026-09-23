@@ -1,8 +1,8 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Ketryx Build Artifacts Builds API
+  title: Ketryx Build Builds API
   version: v1
-  description: The Ketryx Build API lets CI/CD pipelines report builds, test results, and software bill-of-materials (SBOM) documents to the Ketryx application lifecycle management (ALM) platform for regulated medical-device and life-sciences software. Builds are associated with a Ketryx project and a version (or a commit SHA), and can carry JUnit / Cucumber test results, build artifacts, and CycloneDX / SPDX SBOM files. This specification was derived from Ketryx's own open-source clients (the Ketryx GitHub Action and the build-api-reporter Python utility); it is not the provider's published OpenAPI.
+  description: The Ketryx Build API lets CI/CD pipelines report builds, test results, and software bill-of-materials (SBOM) documents to the Ketryx application lifecycle management (ALM) platform for regulated medical-device and life-sciences software.
   x-provenance:
     generated: '2026-07-19'
     method: derived

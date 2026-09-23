@@ -1,8 +1,7 @@
 {
   "provider": "ketryx",
   "sources": [
-    "ketryx-artifacts-api-openapi.yml",
-    "ketryx-builds-api-openapi.yml"
+    "_original/ketryx-build-api-openapi.yml"
   ],
   "outputs": [
     "ketryx-artifacts-api-openapi.yml",
@@ -11,6 +10,13 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "ketryx-build-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "ketryx-artifacts-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "ketryx-builds-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
