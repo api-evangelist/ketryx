@@ -48,23 +48,6 @@ paths:
           description: Invalid request (missing project, or unresolvable version).
 components:
   schemas:
-    Build:
-      type: object
-      description: A recorded build.
-      properties:
-        id:
-          type: string
-          description: Ketryx ID of the reported build.
-        buildId:
-          type: string
-          description: Ketryx ID of the reported build.
-        projectId:
-          type: string
-          description: Ketryx project ID the build belongs to.
-        ok:
-          type: boolean
-          description: Whether the build and any included checks succeeded.
-      additionalProperties: true
     BuildRequest:
       type: object
       required:
@@ -106,6 +89,23 @@ components:
         log:
           type: string
           description: Log output to store with the build.
+    Build:
+      type: object
+      description: A recorded build.
+      properties:
+        id:
+          type: string
+          description: Ketryx ID of the reported build.
+        buildId:
+          type: string
+          description: Ketryx ID of the reported build.
+        projectId:
+          type: string
+          description: Ketryx project ID the build belongs to.
+        ok:
+          type: boolean
+          description: Whether the build and any included checks succeeded.
+      additionalProperties: true
   securitySchemes:
     bearerAuth:
       type: http
