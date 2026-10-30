@@ -64,6 +64,123 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Ketryx is a company surfaced as a portfolio company of lightspeed-venture-partners and added to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+Ketryx is an AI-native application lifecycle management (ALM) and compliance platform for regulated medical-device and life-sciences software teams. It integrates with developer tools such as Jira and GitHub to automate the documentation, traceability, and quality-management work required by FDA, EU MDR, ISO 13485, ISO 14971, and IEC 62304, keeping teams continuously audit-ready. Capabilities include automated Design and Development File generation, requirement-risk-code-test traceability, agentic AI for repetitive compliance tasks, ISO 14971 risk management, software bill-of-materials (SBOM) and vulnerability tracking, QMS enforcement, and change-impact assessment. Ketryx exposes a public Build API that lets CI/CD pipelines report builds, JUnit / Cucumber test results, build artifacts, and CycloneDX / SPDX SBOM documents into a project, via a first-party GitHub Action and Python utility. The company is backed by Lightspeed Venture Partners.
 
-Backed by: lightspeed-venture-partners
+**Areas:** Company · Medical Devices · Life Sciences · Compliance · Regulatory · Application Lifecycle Management · Quality Management · SBOM · DevOps · Healthcare · Governance · CI/CD
+
+## Ketryx on APIs.io
+
+Everything profiled for Ketryx is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/ketryx/](https://apis.io/providers/ketryx/)** — or go straight to one of the APIs or properties below.
+
+### APIs (2)
+
+- [Ketryx Artifacts API](https://apis.io/apis/ketryx/ketryx-artifacts-api/) — Upload build artifacts, test results, and SBOM files.
+- [Ketryx Builds API](https://apis.io/apis/ketryx/ketryx-builds-api/) — Report builds and their status to Ketryx.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [ketryx](https://apis.io/servers/ketryx/ketryx/)
+
+#### Agentic access (1)
+
+Which operations an agent can call, which act, and which need a human in the loop.
+
+- [Ketryx Agentic Access](https://apis.io/agentic-access/ketryx/ketryx-agentic-access/)
+
+#### Collections (2)
+
+Postman and Open Collection request collections.
+
+- [Ketryx Build Artifacts API](https://apis.io/collections/ketryx/open-ketryx-artifacts-api/)
+- [Ketryx Build Artifacts Builds API](https://apis.io/collections/ketryx/open-ketryx-builds-api/)
+
+#### Overlays (1)
+
+OpenAPI overlays, including conversational phrasing for each operation.
+
+- [Ketryx Build Api Overlay](https://apis.io/overlays/ketryx/ketryx-build-api-overlay/)
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Ketryx Authentication](https://apis.io/security/ketryx/ketryx-authentication/)
+- [Ketryx Domain Security](https://apis.io/security/ketryx/ketryx-domain-security/)
+- [Ketryx Trust Center](https://apis.io/security/ketryx/ketryx-trust-center/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.ketryx.com/)
+- [Documentation](https://docs.ketryx.com)
+- [API reference](https://docs.ketryx.com/api/build-api)
+- [Pricing](https://www.ketryx.com/pricing)
+- [Sign up](https://app.ketryx.com/auth/signup)
+- [Support](https://ketryx.zendesk.com/hc/en-us)
+- [Blog](https://www.ketryx.com/learn/blog)
+- [Compliance](https://trust.ketryx.com)
+- [Trust centre](https://trust.ketryx.com)
+- [Terms of service](https://www.ketryx.com/terms)
+- [Privacy policy](https://www.ketryx.com/privacy)
+- [GitHub](https://github.com/Ketryx)
+- [Status](https://status.ketryx.com)
+
+## API Evangelist rating
+
+**Kin Score 33.7** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 73.2 |
+| Contract quality | 14.3 |
+| Contract governance | 18.2 |
+| Operational transparency | 10.5 |
+| Developer ergonomics | 28.0 |
+| Access clarity | 60.5 |
+
+**Agent readiness 18.9** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | derived (partial credit) |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | derived (partial credit) |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 27.3** — Health
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/ketryx/](https://apis.io/providers/ketryx/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Ketryx: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/ketryx/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
